@@ -1,6 +1,13 @@
 #canvas-container {
 	height: 600px;
+	position: relative;
 	width: 600px;
+}
+
+#canvas-container > * {
+	left: 0px;
+	position: absolute;
+	top: 0px;
 }
 
 #container {
