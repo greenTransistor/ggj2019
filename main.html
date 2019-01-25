@@ -2,10 +2,16 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title></title>
+	<title>GGJ 2019</title>
+
 	<link rel="stylesheet" href="views/styles/main.css" />
+
 	<script type="text/javascript" src="lib/init.js"></script>
 	<script type="text/javascript" src="lib/dom.js"></script>
+
+	<script type="text/javascript" src="controllers/MainMenuController.js"></script>
+
+	<script type="text/javascript" src="views/MenuView.js"></script>
 </head>
 <body onload="if (window.mainInitManager !== undefined) mainInitManager.init();">
 	<div id="container">
@@ -13,7 +19,14 @@
 			Canvas will be here
 		</div>
 		<div id="menus-container">
-			Menus will be here
+			<div id="main-menu">
+				<button onclick="MainMenuController.buttonClickHandler('play')">Play</button><br>
+				<button onclick="MainMenuController.buttonClickHandler('settings')">Settings</button><br>
+				<button onclick="MainMenuController.buttonClickHandler('about')">About</button><br>
+			</div>
+			<div id="main-game-menu">
+				Main game menu
+			</div>
 		</div>
 	</div>
 </body>
