@@ -2,7 +2,11 @@
 
 const MainMenuController = {
 	buttonClickHandler(buttonName) {
-		var menuName = (buttonName === 'play' ? 'main-game' : buttonName);
-		MenuView.switchMenu(menuName);
+		if (buttonName === 'play') {
+			MenuView.switchMenu('main-game');
+			GameController.startGame();
+		} else {
+			MenuView.switchMenu(buttonName);
+		}
 	}
 };
