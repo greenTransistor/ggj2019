@@ -7,6 +7,23 @@ onInit(function() {
 const MainGameMenuView = {
 	init: function() {
 		this.container = $('main-game-menu');
+		this.showResources();
+		this.showBuildingButtons();
+	},
+
+	showBuildingButtons: function() {
+		var currentBuilding;
+		var currentBuildingButton;
+
+		// index starts from 1 to skip Earth
+		for (var i = 1; i < Data.buildings.length; i++) {
+			currentBuilding = Data.buildings[i];
+			currentBuildingButton = document.createElement('button');
+			currentBuildingButton.appendChild(document.createTextNode(currentBuilding.name));
+			currentBuildingButton.onclick = MainGameMenuController.getBuildingButtonClickHandler(i);
+			this.container.appendChild(currentBuildingButton);
+			this.container.appendChild(document.createElement('br'));
+		}
 	},
 
 	showResources: function() {
@@ -21,7 +38,6 @@ const MainGameMenuView = {
 			currentResourceElement.appendChild(currentField);
 			this.container.appendChild(currentResourceElement);
 		}
-		this.updateResources();
 	},
 
 	updateResources: function() {

@@ -3,6 +3,6 @@
 const GameController = {
 	startGame: function() {
 		Game.start();
-		MainGameMenuView.showResources();
+		MainGameMenuView.updateResources();
 	}
 };

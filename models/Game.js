@@ -16,5 +16,9 @@ const Game = {
 	start: function() {
 		this.initBuildings();
 		this.initResources();
+	},
+
+	startBuilding: function(buildingType) {
+		return (new Building(buildingType));
 	}
 };
