@@ -34,6 +34,11 @@ const BuildingController = {
 	},
 
 	tryToBuild: function() {
-		//
+		if (!Game.tryToBuild(this.newBuilding)) {
+			return;
+		}
+
+		this.newBuilding.element.onclick = () => {};
+		document.body.onmousemove = () => {};
 	}
 };

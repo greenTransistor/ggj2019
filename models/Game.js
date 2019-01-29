@@ -20,5 +20,11 @@ const Game = {
 
 	startBuilding: function(buildingType) {
 		return (new Building(buildingType));
+	},
+
+	tryToBuild: function(building) {
+		this.buildings.push(building);
+
+		return true;
 	}
 };
